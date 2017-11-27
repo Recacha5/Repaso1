@@ -69,25 +69,12 @@ public class Practica1 {
     public static String decodificarFecha(){
         Scanner leer = new Scanner (System.in);
         String fecha;
-        String resultado="";
-        String vFecha[] = new String[3];
+        String resultado;
+        
         System.out.println("Dime una fecha con formato de 8 cifras [aaaammdd]");
         fecha = leer.nextLine().trim();
         
-        for (int i = 0; i < vFecha.length; i++) {
-            vFecha[i]="";
-        }
-        
-        for (int i = 0; i < 4; i++) {
-            vFecha[0] += fecha.substring(i,i+1);
-        }
-        for (int i = 4; i < 6; i++) {
-            vFecha[1] += fecha.substring(i,i+1);
-        }
-        for (int i = 6; i < 8; i++) {
-            vFecha[2] += fecha.substring(i,i+1);
-        }
-        resultado = vFecha[2] + "/" + vFecha[1] + "/" + vFecha[0];
+        resultado = fecha.substring(6, 8) + "/" + fecha.substring(4, 6) + "/" + fecha.substring(0, 4);
         return resultado;
     }
     public static boolean numeroPrimo (){
