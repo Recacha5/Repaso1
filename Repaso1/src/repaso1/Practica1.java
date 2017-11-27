@@ -119,14 +119,12 @@ public class Practica1 {
         numero = leer.nextInt();
         
         while (!(numero==1 || numero==0)){
-            resultado += Integer.toString(numero%2);
+            resultado = Integer.toString(numero%2) + resultado;
             numero = numero/2;
         }
-        resultado += numero;
-        for (int i = resultado.length(); i > 0; i--) {
-            resultado2 += resultado.substring(i-1, i);
-        }
-        return resultado2;
+        resultado = numero + resultado;
+        
+        return resultado;
     }
     public static int numeroMayor(){
         
